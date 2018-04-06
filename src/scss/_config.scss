@@ -1,0 +1,277 @@
+/******************
+******COLORS******
+******************/
+// Select colorScheme (1 - 9)
+$colorScheme: 9;
+
+// select Font collection (1 - 7)
+$fontCollection: 9;
+
+// Declare Color variables
+$attentionColor: black; // Base color
+$bgColor: black; //  F9F7F7 background-color
+$pColor: black; // <p>
+$anchorColor: black; // <a>
+$activeColor: black; // <a> active
+$headerColor: black; // 3F72AF header
+$h1Color: black; // <h1>
+
+// Declare Font variables
+$headerFont: 'serif';
+$paragraphFont: 'sans-serif';
+
+/********************************************** 
+*********************Mixins********************
+**********************************************/
+@mixin translate-y($e) {
+  -webkit-transform: translate-y($e);
+  -moz-transform: translate-y($e);
+  transform: translate-y($e);
+}
+
+@mixin transition($e) {
+  -webkit-transition: $e;
+  -moz-transition: $e;
+  transition: $e;
+}
+
+@if $colorScheme == 1 {
+  // Color Scheme 1 (shades of blue) 
+  $bgColor: #DBE2EF; //  F9F7F7 background-color
+  $pColor: #112D4E; // <p>
+  $anchorColor: #112D4E; // <a>
+  $activeColor: #F9F7F7; // <a> active
+  $headerColor: #3F72AF; // 3F72AF header
+  $h1Color: #3F72AF; // <h1>
+} @else if $colorScheme == 2 {
+  // Color Scheme 2 (pink sunset and grey) 
+  $bgColor: #34374C; // background-color
+  $pColor: #F6F6F6; // <p>
+  $anchorColor: #F6F6F6; // <a>
+  $activeColor: #2C2E3E; // <a> active
+  $headerColor: #EE2B47; // header
+  $h1Color: #EE2B47; // <h1>
+} @else if $colorScheme == 3 {
+  // Color Scheme 3 (shades of grey) 
+  $bgColor: #C4E3CB; // background-color
+  $pColor: #616161; // <p>
+  $anchorColor: #616161; // <a>
+  $activeColor: #F4F9F4; // <a> active
+  $headerColor: #8AAE92; // header
+  $h1Color: #8AAE92; // <h1>
+} @else if $colorScheme == 4 {
+  // Color Scheme 4 (NES woodsman) 
+  $bgColor: #F8EEB4; // background-color
+  $pColor: #092A35; // <p>
+  $anchorColor: #092A35; // <a>
+  $activeColor: #CFEE91; // <a> active
+  $headerColor: #658525; // header
+  $h1Color: #658525; // <h1>
+} @else if $colorScheme == 5 {
+  // Color Scheme 5 (soft yellow and grey) 
+  $bgColor: #D6C5E8; // background-color
+  $pColor: #3F668E; // <p>
+  $anchorColor: #3F668E; // <a>
+  $activeColor: #FFEDB0; // <a> active
+  $headerColor: #FFE48A; // header
+  $h1Color: #FFE48A; // <h1>
+} @else if $colorScheme == 6 {
+  // Color Scheme 6 (black, white, and grey Hard Contrast) 
+  $bgColor: white; // background-color
+  $pColor: black; // <p>
+  $anchorColor: gray; // <a>
+  $activeColor: white; // <a> active
+  $headerColor: black; // header
+  $h1Color: #black; // <h1>
+} @else if $colorScheme == 7 {
+  // Color Scheme 7 (black, white, and grey Soft Contrast) 
+  $bgColor: #F7F7F7; // #DBDAD6; // #AAA8A5; // background-color
+  $pColor: #525354; // <p>
+  $anchorColor: #AAA8A5; // <a>
+  $activeColor: white; // #525354; // <a> active
+  $headerColor: #323334; // #0F0F11; // #323334; // header
+  $h1Color: #323334; // <h1>
+} @else if $colorScheme == 8 {
+  // Color Scheme 8 (black, white, and grey Soft Contrast w/ white bg) 
+  $bgColor: white; // #DBDAD6; // #AAA8A5; // background-color
+  $pColor: #343a40; // <p>
+  $anchorColor: #AAA8A5; // <a>
+  $activeColor: white; // #525354; // <a> active
+  $headerColor: #323334; // #0F0F11; // #323334; // header and
+  $h1Color: #323334; // <h1>
+} @else if $colorScheme == 9 {
+  // Color Scheme 9 (black, white, and grey Soft Contrast w/ dark bg and light letters) 
+  $attentionColor: #7AFFFD; // #60ece8; // #6df557; // #4006e2; // #ea7e3a; // anchors
+  $bgColor: #6c6c6c; // background-color
+  $pColor: #f8f9fa; // <p>
+  $anchorColor: #6df557; // #AAA8A5; // <a>
+  $activeColor: #7ebbf9; // #61f1b7; // #6df557; // #f8f9fa; // #525354; // <a> active
+  $headerColor: #2b2d2e; // #323334; // #0F0F11; // #323334; // header
+  $h1Color: #f8f9fa; // <h1>
+} @else if $colorScheme == 10 {
+  // Color Scheme 10
+  $attentionColor: #f9bd85; // #60ece8; // #6df557; // #4006e2; // #ea7e3a; // anchors
+  $bgColor: #6c6c6c; // background-color
+  $pColor: #f8f9fa; // <p>
+  $anchorColor: #6df557; // #AAA8A5; // <a>
+  $activeColor: #ff9827; // #f8f9fa; // #525354; // <a> active
+  $headerColor: #323334; // #0F0F11; // #323334; // header
+  $h1Color: #f8f9fa; // <h1>
+}
+
+/**************************************
+*****************FONTS*****************
+**************************************/
+@if $fontCollection == 1 {
+  // Nunito & Alegreya
+  $headerFont: 'Nunito', serif;
+  $paragraphFont: 'Alegreya', sans-serif;
+} @else if $fontCollection == 2 {
+  // Oswald & Merriweather
+  $headerFont: 'Oswald', serif;
+  $paragraphFont: 'Merriweather', sans-serif;
+} @else if $fontCollection == 3 {
+  // Oswald & Old Standard TT
+  $headerFont: 'Oswald', serif;
+  $paragraphFont: 'Old Standard TT', sans-serif;
+} @else if $fontCollection == 4 {
+  // Ubuntu & Didact Gothic
+  $headerFont: 'Ubuntu', serif;
+  $paragraphFont: 'Didact Gothic', sans-serif;
+} @else if $fontCollection == 5 {
+  // Lora & Source Sans Pro
+  $headerFont: 'Lora', serif;
+  $paragraphFont: 'Source Sans Pro', sans-serif;
+} @else if $fontCollection == 6 {
+  // Ubuntu & Source Sans Pro
+  $headerFont: 'Ubuntu', serif;
+  $paragraphFont: 'Source Sans Pro', sans-serif;
+} @else if $fontCollection == 7 {
+  // Oswald & Didact Gothic
+  $headerFont: 'Oswald', serif;
+  $paragraphFont: 'Didact Gothic', sans-serif;
+} @else if $fontCollection == 8 {
+  // Ubuntu & Didact Gothic
+  $headerFont: 'Ubuntu', serif;
+  $paragraphFont: 'Didact Gothic', sans-serif;
+} @else if $fontCollection == 9 {
+  // Ubuntu & Didact Gothic
+  $headerFont: 'Didact Gothic', serif;
+  $paragraphFont: 'Ubuntu', sans-serif;
+}
+
+$h1fontSize: 40px;
+
+/****************************************
+************default: heights************
+****************************************/
+
+html, main, #root {
+  height: 100%;
+}
+
+/********************************************* 
+****************fonts & colors**************** 
+*********************************************/
+
+// mobile & tablet
+@media (max-width: 767px) {
+  body {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+}
+
+// desktop
+@media (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
+
+
+body {
+  height: 100%;
+  font-family: $paragraphFont;
+  font-style: normal;
+  line-height: 137%;
+  font-weight: 400;
+  color: $pColor;
+  background-color: $bgColor;
+}
+
+h1 {
+  font-family: $headerFont;
+  color: $h1Color;
+  width: 100%;
+  margin: 0px auto 35px;
+  text-align: center;
+}
+
+h2{
+  font-family: $headerFont;
+  color: $h1Color
+}
+
+a {
+  font-family: $headerFont;
+  text-decoration: none;
+  @include transition(.4s ease-in-out);
+  cursor: pointer;
+  color: $attentionColor;
+
+  &:hover {
+    color: $activeColor;
+    @include transition(.4s ease-in-out);
+  }
+}
+
+/*******************
+*******margins*******
+*******************/
+
+p {
+  margin-bottom: 24px;
+}
+
+/*******************
+*******arrows*******
+*******************/
+
+i {
+    border: solid $headerColor;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

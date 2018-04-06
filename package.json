@@ -1,0 +1,27 @@
+{
+  "name": "blog.ryanpaixao.com",
+  "version": "0.1.0",
+  "homepage": "https://blog.ryanpaixao.com",
+  "private": true,
+  "dependencies": {
+    "buttercms": "^1.1.1",
+    "gh-pages": "^1.1.0",
+    "node-sass-chokidar": "^1.2.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "reset-css": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build-css": "node-sass-chokidar src/scss/ -o src/css/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/scss/ -o src/css/ --watch --recursive"
+  }
+}

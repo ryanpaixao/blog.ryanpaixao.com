@@ -1,0 +1,109 @@
+@import "_config.scss";
+
+/*****************
+******button******  
+*****************/
+
+.mobile-nav-button {
+  background-color: $pColor;
+  margin: 10%;
+  width: 50px;
+  height: 50px;
+  border-radius: 5%;
+  border: 10px solid $bgColor;
+  outline: none;
+  transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.mobile-nav-button {
+  div {
+    width: 39px;
+    height: 4px;
+    background-color: $bgColor;
+    margin: 4px -10px;
+  }
+}
+
+/***************************
+*******slide-out-nav*******
+***************************/
+// tablet and mobile
+@media (max-width: 767px) {
+  $menuHeight: 100vh;
+  $menuWidth: 100vw;
+
+  .slide-out-nav {
+    width: $menuWidth;
+    background-color: $headerColor;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    overflow: scroll;
+    z-index: 1000;
+    text-align: center;
+    font-size: 27px;
+
+    li {
+      border: 1px black solid;
+      padding: 7px;
+
+      a {
+        padding: 2px 30%;
+      }
+    }
+
+    li:last-child {
+      background: $attentionColor;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+   
+  .slide-out-nav.hide {
+    transform: translate3d(0, 0vh, 0);
+  }
+   
+  .slide-out-nav.show {
+    transform: translate3d(0, $menuHeight, 0);
+    overflow: hidden;
+  }
+}
+
+// desktop
+@media (min-width: 768px) {
+  .slide-out-nav {
+    background-color: $headerColor;
+
+    display: inline-grid;
+    
+    font-size: 25px;
+
+    grid-column: -2 / -1;
+    grid-row: 1;
+    align-items: center;
+
+    ul {
+      margin-top: 28px;
+      grid-column: -2 / -1;
+      grid-row: 1;
+
+      grid-template-columns: repeat(6, minmax(90px, 1fr));
+      justify-items: center;
+      align-items: center;
+
+      display: inline-grid;
+
+      li {
+        margin-right: 15px;
+      }
+      li:last-child {
+        display: none;
+      }
+    }
+  }
+}
